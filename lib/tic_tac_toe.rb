@@ -80,6 +80,19 @@ class TicTacToe
       @board[win_combo.first]
     end
   end
+  
+  def play(board)
+    until over?(board)
+      turn(board)
+    end
+    if won?(board)
+      puts "Congratulations #{winner(board)}!"
+    elsif draw?(board)
+      puts "Cat's Game!"
+    else
+      puts "Something went wrong."
+    end
+  end
 end
 
 
